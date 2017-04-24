@@ -1,8 +1,0 @@
-php: 	raw
-
-js: 	angular
-	vue
-	jiquiri
-	react
-datenbank:	mySQL
-anderes:	xampp
