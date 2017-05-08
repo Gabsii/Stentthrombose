@@ -3,3 +3,4 @@
 # Example .gitignore files: https://github.com/github/gitignore
 
 /sql/dbModel.mwb.bak
+js/my-app/package.json
