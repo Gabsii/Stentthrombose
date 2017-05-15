@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 
-#header{
+.header{
   font-family: 'Raleway';
   position: fixed;
   top: 0px;
@@ -9,5 +9,9 @@
   height: 80px;
   background-color: #E0E0E0;
   padding-left: 20px;
-  border-bottom: 
+  border-bottom: 1px solid #9E9E9E;
+}
+.Inputlogin {
+  position: relative;
+  top: 80px;
 }
