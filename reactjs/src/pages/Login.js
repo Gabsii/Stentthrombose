@@ -16,7 +16,6 @@ class Header extends React.Component {
       return (
          <div className="header">
             <h1>Stenttrombose</h1>
-
          </div>
       );
    }

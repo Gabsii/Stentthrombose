@@ -40,6 +40,7 @@
 }
  .inputField{
    height: 20px;
-   border: solid 1px #707070;
+   width: 200px;;
+   border: solid 1px #9E9E9E;
    transition: box-shadow 0.3s, border 0.3s;
  }
