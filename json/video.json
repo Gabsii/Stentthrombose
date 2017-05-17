@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Video",
+    "description": "The Video uploading schema for Stenttrombose",
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "link": {
+            "type": "string",
+            "description": "the unique identifier for a video"
+        }
+    },
+    "required": ["title", "link"]
+}

@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Team Login",
+    "description": "The Team Login schema for Stenttrombose",
+    "type": "object",
+    "properties": {
+        "Token": {
+            "description": "The unique identifier for a Team",
+            "type": "string"
+        }
+    },
+    "required": ["Token"]
+}
