@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Leader Register",
+    "description": "The Leader Register schema for Stenttrombose",
+    "type": "object",
+    "properties": {
+        "email": {
+            "description": "The unique identifier for a Leader",
+            "type": "string"
+        },
+        "password": {
+            "type": "string"
+        },
+        "name": {
+            "description": "The name that will be displayed on the site (not unique)",
+            "type": "string"
+        }
+    },
+    "required": ["email", "password", "name"]
+}
