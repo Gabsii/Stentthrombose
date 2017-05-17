@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Project",
+    "description": "The schema for adding a project",
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string"
+        },
+        "projectdescription": {
+            "type": "string"
+        },
+        "questions": {
+            "type": "array"
+            "items": {
+                "question": {
+                    "type": "string"
+                },
+                "relevance": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 10,
+                    "exclusiveMinimum": true
+                },
+                "answer": {
+                    "type": "string"
+                }
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "teams": {
+          "type": "array",
+          "items": {
+            "name": {
+                "type": "string"
+            },
+            "short": {
+                "type": "string"
+            }
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+    },
+    "required": ["title", "questions", "teams"]
+}
