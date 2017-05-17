@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Normal Response",
+    "description": "The normal Response Message without special Data",
+    "type": "object",
+    "properties": {
+        "responseCode": {
+            "description": "The Code that stands for a Error Type",
+            "type": "number"
+        },
+        "responseMessage": {
+            "type": "string"
+        }
+    },
+    "required": ["responseCode", "responseMessage"]
+}
