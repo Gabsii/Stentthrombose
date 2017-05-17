@@ -26,7 +26,7 @@
   background-color: black;
   position: fixed;
   width: 2px;
-  height: 150px;
+  height: 200px;
   top: 40%;
   left: 60%;
   display: block;
@@ -38,3 +38,8 @@
   top: 40%;
   left: 70%
 }
+ .inputField{
+   height: 20px;
+   border: solid 1px #707070;
+   transition: box-shadow 0.3s, border 0.3s;
+ }

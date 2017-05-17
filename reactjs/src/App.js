@@ -30,15 +30,15 @@ class Login extends Component {
           <Header/>
           <form>
             TEAMS<br/>
-              <input type="text" placeholder="Token"/><br/>
+              <input type="text" placeholder="Token" className="inputField"/><br/>
               <input type="submit" value="Sign in"/>
           </form>
         </div>
         <div className="leaderlogin">
           <form>
             PROJECTLEADER<br/>
-            <input type="text" placeholder="E-Mail"/><br/>
-            <input type="text" placeholder="Passwort"/><br/>
+            <input type="text" placeholder="E-Mail" className="inputField"/><br/>
+            <input type="text" placeholder="Passwort" className="inputField"/><br/>
             <input type="submit" value="Sign in"/><br/>
             <input type="submit" value="not registered?"/>
           </form>
