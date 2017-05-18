@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './Login.css';
+import './App.css';
+
 
 class App extends Component {
   render() {
@@ -16,7 +17,6 @@ class Header extends React.Component {
       return (
          <div className="header">
             <h1>Stenttrombose</h1>
-
          </div>
       );
    }
