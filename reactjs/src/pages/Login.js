@@ -45,11 +45,22 @@ class Login extends Component {
   }
 
   signLeader(){
-    console.log(this.state);
+    if(this.state.mail !== null && this.state.password !== null && this.state.token == null){
+      console.log(this.state);
+    }else{
+      console.log("enter user and password")
+    }
   }
 
   signTeam(){
-    console.log(this.state);
+    if(this.state.mail == null && this.state.password == null && this.state.token !== null && this.state.token !== ""){
+      console.log(this.state);
+    }else{
+      console.log("enter token")
+    }  }
+
+  register(){
+    console.log("Registrieren wurde noch nicht hinzugefügt.");
   }
 
   render (){
@@ -67,9 +78,9 @@ class Login extends Component {
           <form>
             PROJECTLEADER<br/>
             <input type="text" placeholder="E-Mail" className="inputField" onChange={this.setMail.bind(this)} required/><br/>
-            <input type="text" placeholder="Passwort" className="inputField" onChange={this.setPassword.bind(this)} required/><br/>
+            <input type="password" placeholder="Passwort" className="inputField" onChange={this.setPassword.bind(this)} required/><br/>
             <input type="submit" value="Sign in" onClick={this.signLeader.bind(this)}/><br/>
-            <input type="submit" value="not registered?"/>
+            <input type="submit" value="not registered?" onClick={this.register.bind(this)} />
           </form>
           </div>
       </div>
