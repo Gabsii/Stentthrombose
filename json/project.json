@@ -23,7 +23,10 @@
                     "exclusiveMinimum": true
                 },
                 "answer": {
-                    "type": "string"
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 10,
+                    "exclusiveMinimum": true
                 }
             },
             "minItems": 1,
