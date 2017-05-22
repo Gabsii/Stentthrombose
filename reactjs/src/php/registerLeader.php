@@ -31,6 +31,8 @@
         $pdo->commit();
         $response = array('responseCode' => SUCCESS, 'responseMessage' => 'User Successfully registered');
         //YAY hat geklappt
+        $_SESSION['userid'] = $userdata['id'];
+        $_SESSION['login'] = 1;
     } catch (Exception $e) {
         $pdo->rollBack();
         $response = array('responseCode' => SQL_FAIL, 'responseMessage' => $e);
