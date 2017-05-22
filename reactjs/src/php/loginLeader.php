@@ -2,6 +2,7 @@
     include 'functions.php';
     include 'constants.php';
 
+    header('Access-Control-Allow-Origin: *');
     session_start();
 
     $pdo = create_pdo();
