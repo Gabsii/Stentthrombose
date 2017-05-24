@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     header("Access-Control-Allow-Origin: *");
 
     include_once '../database/constants.php';
@@ -15,5 +17,9 @@
     $product->password = $inData->password;
 
     $data = $product->login();
+    if ($data->returnCode == 0) {
+        $_SESSION['userid'] = $data->id;
+        $_SESSION['login'] = 1;
+    }
     echo json_encode($data);
 ?>

@@ -2,27 +2,17 @@ import React, { Component } from 'react';
 import './Login.css';
 import axios from 'axios';
 
-class App extends Component {
-  render() {
-      return (
-         <div>
-            <Login/>
-         </div>
-      );
-   }
-}
-
-class Header extends React.Component {
-   render() {
-      return (
-         <div className="header">
+class Header extends Component {
+  render (){
+    return(
+      <div className="row">
+         <div className="col-12 header">
             <h1>Stenttrombose</h1>
-
          </div>
-      );
-   }
+      </div>
+    )
+  }
 }
-
 class Login extends Component {
   constructor(){
     super();
@@ -86,16 +76,20 @@ class Login extends Component {
 
   render (){
     return(
-      <div>
-        <div className="teamlogin">
-          <Header/>
+
+  <div>
+      <Header />
+      <div className="row">
+        <div className="col-3"></div>
+        <div className="col-3 teamLogin">
           <form>
             TEAMS<br/>
               <input type="text" placeholder="Token" className="inputField" onChange={this.setToken.bind(this)} required/><br/>
               <input type="submit" value="Sign in" onClick={this.signTeam.bind(this)}/>
           </form>
         </div>
-        <div className="leaderlogin">
+        <div className="col-1"></div>
+        <div className="col-5 leaderLogin">
           <form>
             PROJECTLEADER<br/>
             <input type="email" placeholder="E-Mail" className="inputField" onChange={this.setMail.bind(this)} required/><br/>
@@ -104,7 +98,9 @@ class Login extends Component {
             <input type="submit" value="not registered?" onClick={this.register.bind(this)} />
           </form>
           </div>
+
       </div>
+    </div>
 
     )
   }
