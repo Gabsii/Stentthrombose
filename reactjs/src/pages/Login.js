@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 class App extends Component {
   render() {
@@ -10,30 +11,34 @@ class App extends Component {
       );
    }
 }
-
-class Header extends React.Component {
-   render() {
-      return (
-         <div className="header">
+class Header extends Component {
+  render (){
+    return(
+      <div className="row">
+         <div className="col-12 header">
             <h1>Stenttrombose</h1>
          </div>
-      );
-   }
+      </div>
+    )
+  }
 }
-
 class Login extends Component {
   render (){
     return(
-      <div>
-        <div className="teamlogin">
-          <Header/>
+
+  <div>
+      <Header />
+      <div className="row">
+        <div className="col-3"></div>
+        <div className="col-3 teamLogin">
           <form>
-            TEAMS<br/>
+              TEAMS<br/>
               <input type="text" placeholder="Token" className="inputField"/><br/>
               <input type="submit" value="Sign in"/>
           </form>
         </div>
-        <div className="leaderlogin">
+        <div className="col-1"></div>
+        <div className="col-5 leaderLogin">
           <form>
             PROJECTLEADER<br/>
             <input type="text" placeholder="E-Mail" className="inputField"/><br/>
@@ -42,7 +47,9 @@ class Login extends Component {
             <input type="submit" value="not registered?"/>
           </form>
           </div>
+
       </div>
+    </div>
 
     )
   }
