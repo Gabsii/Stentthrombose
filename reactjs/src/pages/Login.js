@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 import './Login.css';
 import axios from 'axios';
 
+class App extends React.Component {
+  render() {
+      return (
+         <div>
+            <Header/>
+            <Login/>
+         </div>
+      );
+   }
+}
+
 class Header extends Component {
   render (){
     return(
@@ -78,7 +89,6 @@ class Login extends Component {
     return(
 
   <div>
-      <Header />
       <div className="row">
         <div className="col-3"></div>
         <div className="col-3 teamLogin">
