@@ -20,6 +20,7 @@
     if ($data->returnCode == 0) {
         $_SESSION['userid'] = $data->id;
         $_SESSION['login'] = 1;
+        setcookie("cookiezi", $_SESSION['login'], 0, "/Stentthrombose");
     }
     echo json_encode($data);
 ?>
