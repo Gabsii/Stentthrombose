@@ -1,8 +1,8 @@
-
-cd src/php
+cd ../api
 if exist "c:\xampp" (
-  xcopy "*.*" "c:\xampp\htdocs\Stentthrombose-API" /y
+  mkdir c:\xampp\htdocs\Stentthrombose\api
+  xcopy "*.*" "c:\xampp\htdocs\Stentthrombose\api" /y /s
 ) else (
-  xcopy "*.*" "d:\xampp\htdocs\Stentthrombose-API" /y
+  xcopy "*.*" "d:\xampp\htdocs\Stentthrombose\api\" /y /s
 )
 pause
