@@ -2,15 +2,6 @@ import React, { Component } from 'react';
 import './Login.css';
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-class App extends Component {
-  render() {
-      return (
-         <div>
-            <Login/>
-         </div>
-      );
-   }
-}
 class Header extends Component {
   render (){
     return(
