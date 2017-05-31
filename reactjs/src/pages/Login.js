@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css';
 import axios from 'axios';
+import Link from 'react-router-dom';
 
 class App extends React.Component {
   render() {
@@ -24,6 +25,7 @@ class Header extends Component {
     )
   }
 }
+
 class Login extends Component {
   constructor(){
     super();
@@ -81,9 +83,6 @@ class Login extends Component {
       console.log("enter token")
     }  }
 
-  register(){
-    console.log("Registrieren wurde noch nicht hinzugefügt.");
-  }
 
   render (){
     return(
@@ -103,9 +102,11 @@ class Login extends Component {
           <form>
             PROJECTLEADER<br/>
             <input type="email" placeholder="E-Mail" className="inputField" onChange={this.setMail.bind(this)} required/><br/>
-            <input type="password" placeholder="Passwort" className="inputField" onChange={this.setPassword.bind(this)} required/><br/>
+            <input type="password" placeholder="Password" className="inputField" onChange={this.setPassword.bind(this)} required/><br/>
             <input type="submit" value="Sign in" onClick={this.signLeader.bind(this)}/><br/>
-            <input type="submit" value="not registered?" onClick={this.register.bind(this)} />
+            <input type="submit" value="not registered?">
+            //Link to="/register"/>
+            </input>
           </form>
           </div>
 
