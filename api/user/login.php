@@ -10,10 +10,9 @@
 
     $inData = json_decode(file_get_contents("php://input"));
 
-    $user->email = $inData->email;
-    $user->password = $inData->password;
+    $user->email = $inData['email'];
 
-    $data = $user->login();
+    $data = $user->login($inData['password']);
     if ($data['responseCode'] == 0) {
         $_SESSION['userid'] = $data['id'];
         $_SESSION['login'] = 1;
