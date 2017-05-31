@@ -49,7 +49,7 @@ class Login extends Component {
   signLeader(){
     if(this.state.mail !== null && this.state.password !== null && this.state.token == null){
       console.log(this.state);
-    axios.get('http://localhost:80/Stentthrombose-API/loginLeader.php', {
+    axios.get('http://localhost:80/Stentthrombose/api/user/login.php', {
         email: this.state.mail,
         password: this.state.password
       })
@@ -67,7 +67,7 @@ class Login extends Component {
   signTeam(){
     if(this.state.mail == null && this.state.password == null && this.state.token !== null && this.state.token !== ""){
       console.log(this.state);
-      axios.get('http://localhost:80/Stentthrombose-API/loginTeam.php', {
+      axios.get('http://localhost:80/Stentthrombose/api/team/login.php', {
           email: this.state.mail,
           password: this.state.password
         })
