@@ -5,7 +5,7 @@ import axios from 'axios';
 class App extends React.Component {
   render() {
       return (
-         <div>
+         <div className="row">
             <Header/>
             <Login/>
          </div>
@@ -95,17 +95,24 @@ class Login extends Component {
           <form>
             TEAMS<br/>
               <input type="text" placeholder="Token" className="inputField" onChange={this.setToken.bind(this)} required/><br/>
-              <input type="submit" value="Sign in" onClick={this.signTeam.bind(this)}/>
+              <button className="btn" onClick={this.signTeam.bind(this)}>
+              Sign up
+              </button>
+
           </form>
         </div>
-        <div className="col-1"></div>
+        <div className="col-1 verticalline"></div>
         <div className="col-5 leaderLogin">
           <form>
-            PROJECTLEADER<br/>
+            LEADER<br/>
             <input type="email" placeholder="E-Mail" className="inputField" onChange={this.setMail.bind(this)} required/><br/>
             <input type="password" placeholder="Passwort" className="inputField" onChange={this.setPassword.bind(this)} required/><br/>
-            <input type="submit" value="Sign in" onClick={this.signLeader.bind(this)}/><br/>
-            <input type="submit" value="not registered?" onClick={this.register.bind(this)} />
+            <button className="btn" onClick={this.signTeam.bind(this)}>
+            Sign up
+            </button><br/>
+            <button className="btn" onClick={this.signTeam.bind(this)}>
+            Not registered?
+            </button>
           </form>
           </div>
 
