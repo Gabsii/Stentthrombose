@@ -83,6 +83,10 @@ class Login extends Component {
       console.log("enter token")
     }  }
 
+    handleClick(e) {
+    e.preventDefault();
+    this.props.history.push('/register');
+    }
 
   render (){
     return(
@@ -93,10 +97,8 @@ class Login extends Component {
         <div className="col-3 teamLogin">
           <form>
             TEAMS<br/>
-              <input type="text" placeholder="Token" className="inputField" onChange={this.setToken.bind(this)} required/><br/>
-              <button className="btn" onClick={this.signTeam.bind(this)}>
-              Sign up
-              </button>
+              <input type="text" placeholder="Token" className="inputField" onChange={this.setToken.bind(this)} required /><br/>
+              <input type="submit" className="btn" onClick={this.signTeam.bind(this)}/>
 
           </form>
         </div>
@@ -104,14 +106,11 @@ class Login extends Component {
         <div className="col-5 leaderLogin">
           <form>
             LEADER<br/>
-            <input type="email" placeholder="E-Mail" className="inputField" onChange={this.setMail.bind(this)} required/><br/>
-            <input type="password" placeholder="Passwort" className="inputField" onChange={this.setPassword.bind(this)} required/><br/>
-            <button className="btn" onClick={this.signTeam.bind(this)}>
-            Sign up
-            </button><br/>
-            <button className="btn" onClick={this.signTeam.bind(this)}>
-            Not registered?
-            </button>
+            <input type="email" placeholder="E-Mail" className="inputField" onChange={this.setMail.bind(this)} required /><br/>
+            <input type="password" placeholder="Passwort" className="inputField" onChange={this.setPassword.bind(this)} required /><br/>
+            <input type="submit" className="btn" onClick={this.signLeader.bind(this)}/>
+            <br/>
+            <button className="btn" onClick={this.handleClick.bind(this)}> </button>
           </form>
           </div>
 
