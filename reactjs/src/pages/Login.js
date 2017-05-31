@@ -104,9 +104,7 @@ class Login extends Component {
             <input type="email" placeholder="E-Mail" className="inputField" onChange={this.setMail.bind(this)} required/><br/>
             <input type="password" placeholder="Password" className="inputField" onChange={this.setPassword.bind(this)} required/><br/>
             <input type="submit" value="Sign in" onClick={this.signLeader.bind(this)}/><br/>
-            <input type="submit" value="not registered?">
-            //Link to="/register"/>
-            </input>
+            <input type="submit" value="not registered?"/>
           </form>
           </div>
 
