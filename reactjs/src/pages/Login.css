@@ -43,6 +43,8 @@
   -moz-transition: all 0.3s;
   transition: all 0.3s;
   width: 200px;
+  text-align: center;
+  vertical-align: middle;
 
   color: #fff;
   background: #424242;
