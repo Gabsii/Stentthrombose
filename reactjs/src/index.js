@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Route, IndexRoute, HashRouter} from 'react-router-dom';
-import App from './pages/Login';
+import {Route, BrowserRouter, browserHistory, Switch} from 'react-router-dom';
+import Login from './pages/Login';
+import Register from './pages/Register';
 import './index.css';
 
 const root = document.getElementById('root');
 
 ReactDOM.render(
-  <HashRouter>
-      <Route path="/" component={App}></Route>
-  </HashRouter>, root
+  <BrowserRouter history={browserHistory}>
+    <Switch>
+      <Route path="/register" component={Register} />
+      <Route path="/" component={Login}/>
+    </Switch>
+  </BrowserRouter>, root
 );
