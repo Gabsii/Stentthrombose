@@ -13,7 +13,7 @@ class User{
         $this->loggedIn = 0;
     }
 
-    function login() {
+    function login($pass_raw) {
         try {
             $this->conn->beginTransaction();
 
@@ -24,7 +24,7 @@ class User{
             $userData = $loginStmt->fetch();
             $loginStmt->closeCursor();
 
-            if ($userData['id'] != "" && password_verify($this->password, $userData['password'])) {
+            if ($userData['id'] != "" && password_verify($pass_raw, $userData['password'])) {
                 $_SESSION['userid'] = $userdata['id'];
                 $_SESSION['login'] = 1;
                 $response = array('responseCode' => SUCCESS, 'id' => $this->id, 'responseMessage' => 'Successfully logged in');

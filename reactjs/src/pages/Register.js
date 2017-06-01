@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './Login.css';
 
 class Register extends Component {
@@ -41,11 +42,11 @@ class Register extends Component {
       console.log("error");
     }
   }
-
+  
   render (){
     return(
-
   <div>
+      <Header/>
       <div className="row">
         <div className="col-4 leaderLogin">
           <form>
@@ -59,9 +60,9 @@ class Register extends Component {
 
       </div>
     </div>
-
     )
   }
 }
+
 
 export default Register;

@@ -10,9 +10,9 @@
 
     $inData = json_decode(file_get_contents("php://input"));
 
-    $user->email = $inData->email;
-    $user->password = password_hash($inData->password, PASSWORD_DEFAULT);
-    $user->name = $inData->name;
+    $user->email = $inData['email'];
+    $user->password = password_hash($inData['password'], PASSWORD_DEFAULT);
+    $user->name = $inData['name'];
 
     $data = $user->create();
     if ($data['responseCode'] == 0) {
