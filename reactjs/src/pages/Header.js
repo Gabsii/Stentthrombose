@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-
+import {Link} from 'react-router-dom';
 
 class Header extends Component {
   render (){
     return(
       <div className="row 2">
          <div className="col-12 header">
-            <h1>Stentthrombose</h1>
+            <h1><Link to='/' className="links">Stentthrombose</Link></h1>
          </div>
       </div>
     )

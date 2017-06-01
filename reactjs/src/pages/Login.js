@@ -94,7 +94,7 @@ class Logins extends Component {
             <input type="password" placeholder="Passwort" className="inputField" onChange={this.setPassword.bind(this)} required /><br/>
             <input type="submit" className="btn" onClick={this.signLeader.bind(this)}/>
             <br/>
-            <Link className="btn" to={'/register'}>Register</Link>
+            <Link className="btn links" to={'/register'}>Register</Link>
           </form>
           </div>
 
