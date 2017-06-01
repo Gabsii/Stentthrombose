@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
 import axios from 'axios';
-import Link from 'react-router-dom';
 
 class App extends React.Component {
   render() {
@@ -19,12 +18,14 @@ class Header extends Component {
     return(
       <div className="row">
          <div className="col-12 header">
-            <h1>Stenttrombose</h1>
+            <h1>Stentthrombose</h1>
          </div>
       </div>
     )
   }
 }
+
+
 
 class Login extends Component {
   constructor(){
@@ -110,7 +111,7 @@ class Login extends Component {
             <input type="password" placeholder="Passwort" className="inputField" onChange={this.setPassword.bind(this)} required /><br/>
             <input type="submit" className="btn" onClick={this.signLeader.bind(this)}/>
             <br/>
-            <button className="btn" onClick={this.handleClick.bind(this)}> </button>
+            <button className="btn" onClick={this.handleClick.bind(this)}> Register </button>
           </form>
           </div>
 
