@@ -43,8 +43,6 @@
   -moz-transition: all 0.3s;
   transition: all 0.3s;
   width: 200px;
-  text-align: center;
-  vertical-align: middle;
 
   color: #fff;
   background: #424242;
@@ -91,4 +89,11 @@
   font-family: 'Raleway';
   font-size: 40px;
 
+}
+
+.links{
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
 }
