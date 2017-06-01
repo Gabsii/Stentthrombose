@@ -1,0 +1,85 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+
+*{
+  box-sizing: border-box;
+
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+    border: 1px solid transparent;
+}
+
+.main{
+  background-color: #81D4FA;
+}
+
+.btn{
+  border: none;
+  font-family: inherit;
+  font-size: 20px;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 5px;
+  display: inline-block;
+  letter-spacing: 1px;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 200px;
+
+  color: #fff;
+  background: #424242;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  border: 1px solid #424242;
+}
+
+.btn:hover {
+    background: transparent;
+    color: black;
+    border: 2px solid  black;
+}
+
+
+.inputField{
+  width: 200px;
+  height: 35px;
+  font-family:inherit;
+  font-size: 15px;
+  border: 1px solid #424242;
+  padding: 5px;
+}
+
+.header{
+  font-family: 'Raleway';
+  font-size: 12px;
+  float:left;
+  width:100%;
+  background-color: #616161;
+  padding-left: 20px;
+  border-bottom: 1px solid #9E9E9E;
+  margin-bottom: 250px;;
+}
+
+.register{
+  font-family: 'Raleway';
+  font-size: 40px;
+}

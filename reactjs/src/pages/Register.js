@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
+import Header from './Header.js';
 import axios from 'axios';
-import './Login.css';
+import './Register.css';
 
 class Register extends Component {
+  render() {
+      return (
+         <div className="row super">
+          <Header/>
+          <Registers/>
+         </div>
+      );
+   }
+}
+
+class Registers extends Component {
   constructor(){
     super();
     this.state = {
@@ -28,7 +40,7 @@ class Register extends Component {
   checkPassword(){
     const chpassword = this.state.chpassword;
     const password = this.state.password;
-    if(chpassword === password){
+    if(chpassword != null && password != null && chpassword == password){
       return true;
     } else {
       return false;
@@ -38,28 +50,26 @@ class Register extends Component {
   register(){
     if(this.checkPassword){
       console.log("registered");
+      console.log(this.state);
     }else{
       console.log("error");
     }
   }
-  
+
   render (){
     return(
-  <div>
-      <Header/>
       <div className="row">
-        <div className="col-4 leaderLogin">
+        <div className="col-4"/>
+        <div className="col-5 register">
           <form>
             REGISTER<br/>
             <input type="email" placeholder="E-Mail" className="inputField" onChange={this.setMail.bind(this)} required/><br/>
             <input type="password" placeholder="Password" className="inputField" onChange={this.setPassword.bind(this)} required/><br/>
             <input type="confirm-password" placeholder="Confirm password" className="inputField" onChange={this.setChPassword.bind(this)} required/><br/>
-            <input type="submit" value="Register" onClick={this.register.bind(this)} />
+            <input type="submit" value="Register" className="btn" onClick={this.register.bind(this)} />
           </form>
-          </div>
-
+        </div>
       </div>
-    </div>
     )
   }
 }

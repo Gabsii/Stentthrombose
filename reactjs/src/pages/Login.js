@@ -1,33 +1,21 @@
 import React, { Component } from 'react';
 import './Login.css';
 import axios from 'axios';
+import Header from './Header.js';
 
-class App extends React.Component {
+
+class Login extends Component {
   render() {
       return (
-         <div className="row">
+         <div className="row bad">
             <Header/>
-            <Login/>
+            <Logins/>
          </div>
       );
    }
 }
 
-class Header extends Component {
-  render (){
-    return(
-      <div className="row">
-         <div className="col-12 header">
-            <h1>Stentthrombose</h1>
-         </div>
-      </div>
-    )
-  }
-}
-
-
-
-class Login extends Component {
+class Logins extends Component {
   constructor(){
     super();
     this.state = {
@@ -100,7 +88,6 @@ class Login extends Component {
             TEAMS<br/>
               <input type="text" placeholder="Token" className="inputField" onChange={this.setToken.bind(this)} required /><br/>
               <input type="submit" className="btn" onClick={this.signTeam.bind(this)}/>
-
           </form>
         </div>
         <div className="col-1 verticalline"></div>
@@ -122,4 +109,4 @@ class Login extends Component {
   }
 }
 
-export default App;
+export default Login;
