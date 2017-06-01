@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Login.css';
 import axios from 'axios';
 import Header from './Header.js';
-
+import {Link} from 'react-router-dom';
 
 class Login extends Component {
   render() {
@@ -70,12 +70,8 @@ class Logins extends Component {
         });
     }else{
       console.log("enter token")
-    }  }
-
-    handleClick(e) {
-    e.preventDefault();
-    this.props.history.push('/register');
     }
+  }
 
   render (){
     return(
@@ -98,7 +94,7 @@ class Logins extends Component {
             <input type="password" placeholder="Passwort" className="inputField" onChange={this.setPassword.bind(this)} required /><br/>
             <input type="submit" className="btn" onClick={this.signLeader.bind(this)}/>
             <br/>
-            <button className="btn" onClick={this.handleClick.bind(this)}> Register </button>
+            <Link className="btn" to={'/register'}>Register</Link>
           </form>
           </div>
 
