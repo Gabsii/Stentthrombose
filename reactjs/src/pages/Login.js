@@ -2,30 +2,21 @@ import React, { Component } from 'react';
 import './Login.css';
 import '../index.css';
 import axios from 'axios';
+import Header from './Header.js';
+import {Link} from 'react-router-dom';
 
-class App extends React.Component {
+class Login extends Component {
   render() {
       return (
-         <div className="row">
+         <div className="row bad">
             <Header/>
-            <Login/>
+            <Logins/>
          </div>
       );
    }
 }
 
-class Header extends Component {
-  render (){
-    return(
-      <div className="row">
-         <div className="col-12 header">
-            <h1>Stenttrombose</h1>
-         </div>
-      </div>
-    )
-  }
-}
-class Login extends Component {
+class Logins extends Component {
   constructor(){
     super();
     this.state = {
@@ -71,8 +62,7 @@ class Login extends Component {
     if(this.state.mail == null && this.state.password == null && this.state.token !== null && this.state.token !== ""){
       console.log(this.state);
       axios.get('http://localhost:80/Stentthrombose/api/team/login.php', {
-          email: this.state.mail,
-          password: this.state.password
+          token: this.state.token
         })
         .then(function (response) {
           console.log(response);
@@ -82,10 +72,7 @@ class Login extends Component {
         });
     }else{
       console.log("enter token")
-    }  }
-
-  register(){
-    console.log("Registrieren wurde noch nicht hinzugefügt.");
+    }
   }
 
   render (){
@@ -97,25 +84,19 @@ class Login extends Component {
         <div className="col-3 teamLogin">
           <form>
             TEAMS<br/>
-              <input type="text" placeholder="Token" className="inputField" onChange={this.setToken.bind(this)} required/><br/>
-              <button className="btn" onClick={this.signTeam.bind(this)}>
-              Sign up
-              </button>
-
+              <input type="text" placeholder="Token" className="inputField" onChange={this.setToken.bind(this)} required /><br/>
+              <input type="submit" className="btn" onClick={this.signTeam.bind(this)}/>
           </form>
         </div>
         <div className="col-1 verticalline"></div>
         <div className="col-5 leaderLogin">
           <form>
             LEADER<br/>
-            <input type="email" placeholder="E-Mail" className="inputField" onChange={this.setMail.bind(this)} required/><br/>
-            <input type="password" placeholder="Passwort" className="inputField" onChange={this.setPassword.bind(this)} required/><br/>
-            <button className="btn" onClick={this.signTeam.bind(this)}>
-            Sign up
-            </button><br/>
-            <button className="btn" onClick={this.signTeam.bind(this)}>
-            Not registered?
-            </button>
+            <input type="email" placeholder="E-Mail" className="inputField" onChange={this.setMail.bind(this)} required /><br/>
+            <input type="password" placeholder="Passwort" className="inputField" onChange={this.setPassword.bind(this)} required /><br/>
+            <input type="submit" className="btn" onClick={this.signLeader.bind(this)}/>
+            <br/>
+            <Link className="btn links" to={'/register'}>Register</Link>
           </form>
           </div>
 
@@ -126,4 +107,4 @@ class Login extends Component {
   }
 }
 
-export default App;
+export default Login;
