@@ -37,15 +37,15 @@ class Logins extends Component {
     this.setState({ password: e.target.value });
   }
 
-  signLeader(){
+  signLeader(e){
+    e.preventDefault();
     if(this.state.mail !== null && this.state.password !== null && this.state.token == null){
-      console.log(this.state);
-    axios.get('http://localhost:80/Stentthrombose/api/user/login.php', {
+    axios.post('http://localhost:8080/Stentthrombose/api/user/login.php', {
         email: this.state.mail,
         password: this.state.password
       })
       .then(function (response) {
-        console.log(response);
+        console.log(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -58,7 +58,7 @@ class Logins extends Component {
   signTeam(){
     if(this.state.mail == null && this.state.password == null && this.state.token !== null && this.state.token !== ""){
       console.log(this.state);
-      axios.get('http://localhost:80/Stentthrombose/api/team/login.php', {
+      axios.post('http://localhost:80/Stentthrombose/api/team/login.php', {
           token: this.state.token
         })
         .then(function (response) {

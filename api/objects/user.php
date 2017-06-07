@@ -15,6 +15,7 @@ class User{
 
     function login($pass_raw) {
         try {
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->conn->beginTransaction();
 
             $loginStmt = $this->conn->prepare('call userByEmail(:email)');
@@ -25,7 +26,7 @@ class User{
             $loginStmt->closeCursor();
 
             if ($userData['id'] != "" && password_verify($pass_raw, $userData['password'])) {
-                $_SESSION['userid'] = $userdata['id'];
+                $_SESSION['userid'] = $userData['id'];
                 $_SESSION['login'] = 1;
                 $response = array('responseCode' => SUCCESS, 'id' => $this->id, 'responseMessage' => 'Successfully logged in');
             } else {
@@ -42,27 +43,33 @@ class User{
 
     function create() {
         try {
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->conn->beginTransaction();
 
             if ($this->email == '' || $this->password == '' || $this->name == '') {
                 throw new Exception("Missing Registration data", 1);
             }
 
-            $registerStmt = $this->conn->prepare("call insertUser(:email, :passwd, :name)");
+            $registerStmt = $this->conn->prepare("call insertUser(:name, :email, :passwd, @id_out)");
             $registerStmt->bindParam(':email', $this->email);
             $registerStmt->bindParam(':passwd', $this->password);
             $registerStmt->bindParam(':name', $this->name);
             $registerStmt->execute();
 
-            $this->id = $registerStmt->fetch['id_out'];
-
             $registerStmt->closeCursor();
-            $response = array('responseCode' => 0, 'id' => $this->id, 'responseMessage' => 'User Successfully registered');
-            $this->conn->commit();
 
+
+            $getIdStmt = $this->conn->prepare("call userByEmail(:email)");
+            $getIdStmt->bindParam(':email', $this->email);
+            $getIdStmt->execute();
+            $this->id = $getIdStmt->fetch()['id'];
+
+            $getIdStmt->closeCursor();
+            $this->conn->commit();
+            $response = array('responseCode' => 0, 'id' => $this->id, 'responseMessage' => 'User Successfully registered');
         } catch (Exception $e) {
             $this->conn->rollBack();
-            $response = array('responseCode' => 12, 'responseMessage' => $e->getMessage());
+            $response = array('responseCode' => 12, 'responseMessage' => $e->getMessage(), 'this' => $fetchData);
         }
         return $response;
     }
