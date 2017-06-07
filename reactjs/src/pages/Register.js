@@ -14,26 +14,37 @@ class Register extends Component {
    }
 }
 
+class Message extends Component{
+  render(){
+    return(
+      <div>
+        ses jacky bitte füg do a grüne box wo sowas wie "success" drinnen steht
+      </div>
+    )
+  }
+}
+
 class Registers extends Component {
   constructor(){
     super();
     this.state = {
       mail: null,
       password: null,
-      chpassword: null
+      chpassword: null,
+      message: "Enter a Name..."
     }
   }
 
   setMail(e){
-    this.setState({ mail: e.target.value });
+    this.setState({ mail: e.target.value, message: "Please enter a password..." });
   }
 
   setPassword(e){
-    this.setState({ password: e.target.value });
+    this.setState({ password: e.target.value, message: "Please make sure the two passwords align..." });
   }
 
   setChPassword(e){
-    this.setState({ chpassword: e.target.value });
+    this.setState({ chpassword: e.target.value, message: "Press the Register button..."});
   }
 
   checkPassword(){
@@ -63,6 +74,7 @@ class Registers extends Component {
     }else{
       console.log("error");
     }
+    return <Message/>
   }
 
   render (){
@@ -75,8 +87,9 @@ class Registers extends Component {
             <input type="email" placeholder="E-Mail" className="inputField" onChange={this.setMail.bind(this)} required/><br/>
             <input type="password" placeholder="Password" className="inputField" onChange={this.setPassword.bind(this)} required/><br/>
             <input type="password" placeholder="Confirm password" className="inputField" onChange={this.setChPassword.bind(this)} required/><br/>
-            <input type="submit" value="Register" className="btn" onClick={this.register.bind(this)} />
+            <input type="submit" value="Register" className="btn" onClick={this.register.bind(this)}/>
           </form>
+          <div className="box">{ this.state.message }</div>
         </div>
         <div className="col-4"/>
       </div>
