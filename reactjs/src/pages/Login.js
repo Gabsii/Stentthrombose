@@ -59,8 +59,7 @@ class Logins extends Component {
     if(this.state.mail == null && this.state.password == null && this.state.token !== null && this.state.token !== ""){
       console.log(this.state);
       axios.get('http://localhost:80/Stentthrombose/api/team/login.php', {
-          email: this.state.mail,
-          password: this.state.password
+          token: this.state.token
         })
         .then(function (response) {
           console.log(response);

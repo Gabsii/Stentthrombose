@@ -18,7 +18,6 @@ class Registers extends Component {
   constructor(){
     super();
     this.state = {
-      token: null,
       mail: null,
       password: null,
       chpassword: null
@@ -38,8 +37,8 @@ class Registers extends Component {
   }
 
   checkPassword(){
-    const chpassword = this.state.chpassword;
-    const password = this.state.password;
+    var chpassword = this.state.chpassword;
+    var password = this.state.password;
     if(chpassword === password){
       return true;
     } else {
@@ -47,10 +46,12 @@ class Registers extends Component {
     }
   }
 
-  register(){
-    if(this.checkPassword && this.state.chpassword != null && this.state.password != null && this.state.mail != null){
+  register(e){
+    e.preventDefault();
+    if(this.checkPassword && this.state.password !== null && this.state.mail !== null){
       console.log(this.state);
-      axios.get('http://localhost:80/Stentthrombose/api/team/create.php', {
+      axios.get('http://localhost:80/Stentthrombose/api/user/create.php', {
+
           email: this.state.mail,
           password: this.state.password
         })
@@ -68,8 +69,8 @@ class Registers extends Component {
   render (){
     return(
       <div className="row">
-        <div className="col-4"/>
-        <div className="col-4 register">
+        <div className="col-5"/>
+        <div className="col-3 register">
           <form>
             REGISTER<br/>
             <input type="email" placeholder="E-Mail" className="inputField" onChange={this.setMail.bind(this)} required/><br/>
