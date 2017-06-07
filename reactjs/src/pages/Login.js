@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Login.css';
-import '../index.css';
 import axios from 'axios';
 import Header from './Header.js';
 import {Link} from 'react-router-dom';
@@ -25,8 +24,6 @@ class Logins extends Component {
       password: null
     }
   }
-
-  
 
   setToken(e){
     this.setState({ token: e.target.value });
