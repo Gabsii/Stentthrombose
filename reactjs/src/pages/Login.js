@@ -76,7 +76,6 @@ class Logins extends Component {
   render (){
     return(
 
-  <div>
       <div className="row">
         <div className="col-3"></div>
         <div className="col-3 teamLogin">
@@ -86,7 +85,7 @@ class Logins extends Component {
               <input type="submit" className="btn" onClick={this.signTeam.bind(this)}/>
           </form>
         </div>
-        <div className="col-1 verticalline"></div>
+        <div className="col-1"></div>
         <div className="col-5 leaderLogin">
           <form>
             LEADER<br/>
@@ -98,8 +97,7 @@ class Logins extends Component {
           </form>
           </div>
 
-      </div>
-    </div>
+        </div>
 
     )
   }
