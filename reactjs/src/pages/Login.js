@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
+import '../index.css';
 import axios from 'axios';
 
 class App extends React.Component {
@@ -33,6 +34,8 @@ class Login extends Component {
       password: null
     }
   }
+
+  
 
   setToken(e){
     this.setState({ token: e.target.value });
