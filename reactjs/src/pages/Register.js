@@ -51,6 +51,7 @@ class Registers extends Component {
     if(this.checkPassword && this.state.password !== null && this.state.mail !== null){
       console.log(this.state);
       axios.get('http://localhost:80/Stentthrombose/api/user/create.php', {
+
           email: this.state.mail,
           password: this.state.password
         })
