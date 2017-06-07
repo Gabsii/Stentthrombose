@@ -9,7 +9,7 @@ class App extends React.Component {
       return (
          <div className="row">
             <Header/>
-            <Project/>
+            <Sidebar/>
          </div>
       );
    }
@@ -26,7 +26,7 @@ class Header extends Component {
   }
 }
 
-class Project extends Component {
+class Sidebar extends Component {
 
   render (){
     return(
