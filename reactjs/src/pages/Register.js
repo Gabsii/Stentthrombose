@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom';
 import Header from './Header.js';
 import axios from 'axios';
 import './Register.css';
@@ -63,6 +64,9 @@ class Registers extends Component {
         })
         .then(function (response) {
           console.log(response);
+          if(response.ResponseCode === 0){
+            return <Redirect push to="/login" />;
+          }
         })
         .catch(function (error) {
           console.log(error);
