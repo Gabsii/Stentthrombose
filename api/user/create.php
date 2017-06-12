@@ -2,17 +2,18 @@
     session_start();
 
     header("Access-Control-Allow-Origin: *");
+    header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
 
     include_once '../database/constants.php';
     include_once '../database/functions.php';
     include_once '../objects/user.php';
 
 
-    $inData = json_decode(file_get_contents("php://input"));
+    $inData = file_get_contents("php://input");
 
-    $user->email = $inData['email'];
-    $user->password = password_hash($inData['password'], PASSWORD_DEFAULT);
-    $user->name = $inData['name'];
+    $user->email = json_decode($inData)->{'email'};
+    $user->password = password_hash(json_decode($inData)->{'password'}, PASSWORD_DEFAULT);
+    $user->name = json_decode($inData)->{'name'};
 
     $data = $user->create();
     if ($data['responseCode'] == 0) {
