@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Redirect} from 'react-router-dom';
 import Header from './Header.js';
 import axios from 'axios';
 import './Register.css';
@@ -23,24 +22,24 @@ class Registers extends Component {
       name: null,
       password: null,
       chpassword: null,
-      message: "Enter a Name..."
+      response: ""
     }
   }
 
   setMail(e){
-    this.setState({ mail: e.target.value, message: "Please enter a password..." });
+    this.setState({ mail: e.target.value });
   }
 
   setName(e){
-    this.setState({ name: e.target.value, message: "Please enter a name..." });
+    this.setState({ name: e.target.value });
   }
 
   setPassword(e){
-    this.setState({ password: e.target.value, message: "Please make sure the two passwords align..." });
+    this.setState({ password: e.target.value });
   }
 
   setChPassword(e){
-    this.setState({ chpassword: e.target.value, message: "Press the Register button..."});
+    this.setState({ chpassword: e.target.value});
   }
 
   checkPassword(){
@@ -71,6 +70,7 @@ class Registers extends Component {
         })
         .catch(function (error) {
           console.log(error);
+          this.setState({ response: error });
         });
     }else{
       console.log("error");
@@ -90,6 +90,7 @@ class Registers extends Component {
             <input type="password" placeholder="Confirm password" className="inputField" onChange={this.setChPassword.bind(this)} required/><br/>
             <input type="submit" value="Register" className="btn" onClick={this.register.bind(this)}/>
           </form>
+          <div className="response"> {this.props.error} </div>
         </div>
         <div className="col-4"/>
       </div>

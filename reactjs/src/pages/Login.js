@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Login.css';
 import axios from 'axios';
 import Header from './Header.js';
-import {Link, Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class Login extends Component {
   render() {
@@ -16,12 +16,14 @@ class Login extends Component {
 }
 
 class Logins extends Component {
+
   constructor(){
     super();
     this.state = {
       token: null,
       mail: null,
-      password: null
+      password: null,
+      response: ""
     }
   }
 
@@ -37,18 +39,24 @@ class Logins extends Component {
     this.setState({ password: e.target.value });
   }
 
+  setResponse(error){
+    this.setState({ response: error.data.responseMessage });
+  }
+
   signLeader(e){
     e.preventDefault();
     if(this.state.mail !== null && this.state.password !== null && this.state.token == null){
-      console.log(this.state);
+      //console.log(this.state);
     axios.post('http://localhost:8080/Stentthrombose/api/user/login.php', {
         email: this.state.mail,
         password: this.state.password
       })
-      .then(function (response) {
+      .then((response) => {
         console.log(response);
         if(response.data.responseCode === 0){
           window.location.assign("/project");
+        }else{
+          this.setResponse(response);
         }
       })
       .catch(function (error) {
@@ -57,20 +65,20 @@ class Logins extends Component {
     }else{
       console.log("enter user and password")
     }
+
   }
 
   signTeam(){
     if(this.state.mail == null && this.state.password == null && this.state.token !== null && this.state.token !== ""){
       console.log(this.state);
       axios.post('http://localhost:80/Stentthrombose/api/team/login.php', {
-
           token: this.state.token
         })
         .then(function (response) {
           console.log(response);
         })
         .catch(function (error) {
-          console.log(error);
+          console.log(error.data);
         });
     }else{
       console.log("enter token")
@@ -100,6 +108,7 @@ class Logins extends Component {
             <br/>
             <Link className="btn links" to={'/register'}>Register</Link>
           </form>
+          <div className="response">{this.state.response}</div>
           </div>
 
       </div>
