@@ -69,7 +69,7 @@ class User{
             $response = array('responseCode' => 0, 'id' => $this->id, 'responseMessage' => 'User Successfully registered');
         } catch (Exception $e) {
             $this->conn->rollBack();
-            $response = array('responseCode' => 12, 'responseMessage' => $e->getMessage(), 'this' => $fetchData);
+            $response = array('responseCode' => 12, 'responseMessage' => $e->getMessage());
         }
         return $response;
     }
