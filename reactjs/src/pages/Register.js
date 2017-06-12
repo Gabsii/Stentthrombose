@@ -56,7 +56,7 @@ class Registers extends Component {
           password: this.state.password
         })
         .then(function (response) {
-          console.log(response.responseMessage);
+          console.log(response);
         })
         .catch(function (error) {
           console.log(error);
@@ -78,7 +78,6 @@ class Registers extends Component {
             <input type="password" placeholder="Confirm password" className="inputField" onChange={this.setChPassword.bind(this)} required/><br/>
             <input type="submit" value="Register" className="btn" onClick={this.register.bind(this)}/>
           </form>
-          <div className="box">{ this.state.message }</div>
         </div>
         <div className="col-4"/>
       </div>
