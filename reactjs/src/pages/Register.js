@@ -20,6 +20,7 @@ class Registers extends Component {
     super();
     this.state = {
       mail: null,
+      name: null,
       password: null,
       chpassword: null,
       message: "Enter a Name..."
@@ -28,6 +29,10 @@ class Registers extends Component {
 
   setMail(e){
     this.setState({ mail: e.target.value, message: "Please enter a password..." });
+  }
+
+  setName(e){
+    this.setState({ name: e.target.value, message: "Please enter a name..." });
   }
 
   setPassword(e){
@@ -52,7 +57,8 @@ class Registers extends Component {
     e.preventDefault();
     if(this.checkPassword && this.state.password !== null && this.state.mail !== null){
       console.log(this.state);
-      axios.get('http://localhost:8080/Stentthrombose/api/user/create.php', {
+      axios.post('http://localhost:8080/Stentthrombose/api/user/create.php', {
+          name: this.state.name,
           email: this.state.mail,
           password: this.state.password
         })
@@ -77,6 +83,7 @@ class Registers extends Component {
         <div className="col-3 register">
           <form>
             REGISTER<br/>
+            <input type="text" placeholder="Name" className="inputField" onChange={this.setName.bind(this)} required/><br/>
             <input type="email" placeholder="E-Mail" className="inputField" onChange={this.setMail.bind(this)} required/><br/>
             <input type="password" placeholder="Password" className="inputField" onChange={this.setPassword.bind(this)} required/><br/>
             <input type="password" placeholder="Confirm password" className="inputField" onChange={this.setChPassword.bind(this)} required/><br/>
