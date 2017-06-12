@@ -83,3 +83,17 @@
   font-family: 'Raleway';
   font-size: 40px;
 }
+
+.box{
+  margin: 5px;
+  margin-left: 0px;
+  width: 200px;
+  min-height: 40px;
+  height: auto;
+  background-color: #1ECD97;
+  border: 1px solid #424242;
+  letter-spacing: 1px;
+  pointer-events: none;
+  font-family:inherit;
+  font-size: 15px;
+}

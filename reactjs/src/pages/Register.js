@@ -19,26 +19,22 @@ class Registers extends Component {
     super();
     this.state = {
       mail: null,
-      name: null,
       password: null,
-      chpassword: null
+      chpassword: null,
+      message: "Enter a Name..."
     }
   }
 
-  setName(e){
-    this.setState({ name: e.target.value });
-  }
-
   setMail(e){
-    this.setState({ mail: e.target.value });
+    this.setState({ mail: e.target.value, message: "Please enter a password..." });
   }
 
   setPassword(e){
-    this.setState({ password: e.target.value });
+    this.setState({ password: e.target.value, message: "Please make sure the two passwords align..." });
   }
 
   setChPassword(e){
-    this.setState({ chpassword: e.target.value });
+    this.setState({ chpassword: e.target.value, message: "Press the Register button..."});
   }
 
   checkPassword(){
@@ -53,10 +49,9 @@ class Registers extends Component {
 
   register(e){
     e.preventDefault();
-    if(this.checkPassword && this.state.password !== null && this.state.mail !== null && this.state.name !== null){
+    if(this.checkPassword && this.state.password !== null && this.state.mail !== null){
       console.log(this.state);
-      axios.post('http://localhost:8080/Stentthrombose/api/user/create.php', {
-          name: this.state.name,
+      axios.get('http://localhost:80/Stentthrombose/api/user/create.php', {
           email: this.state.mail,
           password: this.state.password
         })
@@ -78,11 +73,10 @@ class Registers extends Component {
         <div className="col-3 register">
           <form>
             REGISTER<br/>
-            <input type="text" placeholder="Name" className="inputField" onChange={this.setName.bind(this)} required/><br/>
             <input type="email" placeholder="E-Mail" className="inputField" onChange={this.setMail.bind(this)} required/><br/>
             <input type="password" placeholder="Password" className="inputField" onChange={this.setPassword.bind(this)} required/><br/>
             <input type="password" placeholder="Confirm password" className="inputField" onChange={this.setChPassword.bind(this)} required/><br/>
-            <input type="submit" value="Register" className="btn" onClick={this.register.bind(this)} />
+            <input type="submit" value="Register" className="btn" onClick={this.register.bind(this)}/>
           </form>
         </div>
         <div className="col-4"/>
