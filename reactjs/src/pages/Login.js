@@ -40,7 +40,7 @@ class Logins extends Component {
   signLeader(){
     if(this.state.mail !== null && this.state.password !== null && this.state.token == null){
       console.log(this.state);
-    axios.get('http://localhost:80/Stentthrombose/api/user/login.php', {
+    axios.get('http://localhost:8080/Stentthrombose/api/user/login.php', {
         email: this.state.mail,
         password: this.state.password
       })
