@@ -1,52 +1,53 @@
-.sidebar{
-    position: fixed;
-    margin-top: 60px;
-    height: 100%;
-    border-right: 1px solid black;
+.sidebar {
+  position: fixed;
+  margin-top: 60px;
+  height: 100%;
+  border-right: 1px solid black;
+  background-color: #E0E0E0;
+}
 
-    background-color: #E0E0E0;
+.sidebar-element {
+  font-family: "Raleway";
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px;
+  font-size: 18px;
+  height: 100px;
+  border-bottom: 1px solid #9E9E9E;
 }
-.sidebar-element{
-    font-family: "Raleway";
-    text-align: center;
-    vertical-align: middle;
-    line-height: 100px;
-    font-size: 18px;
-    height: 100px;
-    border-bottom: 1px solid #9E9E9E;
-}
-.sidebar-element:hover{
+
+.sidebar-element:hover {
   background: #9E9E9E;
 }
 
-.logout{
-    font-family: "Raleway";
-    font-size: 20px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 100px;
-    height: 100px;
-    position: absolute;
-    bottom:30px;
-    vertical-align: middle;
-
+.logout {
+  font-family: "Raleway";
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 30px;
+  vertical-align: middle;
 }
-.content{
+
+.content {
   position: relative;
   top: -200px;
 }
 
-.projecttable{
+.projecttable {
   font-family: 'Raleway';
   width: 100%;
 }
 
-.tableheader{
+.tableheader {
   font-size: 20px;
   background-color: #9E9E9E;
 }
 
-.subheading{
+.subheading {
   font-size: 18px;
   background-color: #BDBDBD;
 }

@@ -10,10 +10,9 @@ const root = document.getElementById('root');
 
 ReactDOM.render(
   <BrowserRouter history={browserHistory}>
-    <Switch>
-      <Route path="/register" component={Register} />
-      <Route path="/project" component={Project} />
-      <Route path="/" component={Login}/>
-    </Switch>
-  </BrowserRouter>, root
-);
+  <Switch>
+    <Route path="/register" component={Register}/>
+    <Route path="/project" component={Project}/>
+    <Route path="/" component={Login}/>
+  </Switch>
+</BrowserRouter>, root);
