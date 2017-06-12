@@ -64,8 +64,9 @@ class Registers extends Component {
         })
         .then(function (response) {
           console.log(response);
-          if(response.ResponseCode === 0){
-            return <Redirect push to="/login" />;
+          if(response.data.responseCode === 0){
+            console.log(true);
+            window.location.assign("/login");
           }
         })
         .catch(function (error) {

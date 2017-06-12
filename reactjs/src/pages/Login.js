@@ -47,8 +47,8 @@ class Logins extends Component {
       })
       .then(function (response) {
         console.log(response);
-        if(response.ResponseCode == 0 ){
-          return <Redirect push to="/project" />;
+        if(response.data.responseCode === 0){
+          window.location.assign("/project");
         }
       })
       .catch(function (error) {
