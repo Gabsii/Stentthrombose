@@ -26,9 +26,10 @@ class User{
             $loginStmt->closeCursor();
 
             if ($userData['id'] != "" && password_verify($pass_raw, $userData['password'])) {
+                $this->id = $userData['id'];
                 $_SESSION['userid'] = $userData['id'];
                 $_SESSION['login'] = 1;
-                $response = array('responseCode' => SUCCESS, 'id' => $this->id, 'responseMessage' => 'Successfully logged in');
+                $response = array('responseCode' => SUCCESS, 'id' => $userData['id'], 'responseMessage' => 'Successfully logged in');
             } else {
                 $response = array('responseCode' => ERROR, 'responseMessage' => 'Username or Password wrong');
             }

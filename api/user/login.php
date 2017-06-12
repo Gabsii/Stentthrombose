@@ -8,6 +8,7 @@
     include_once '../database/functions.php';
     include_once '../objects/user.php';
 
+
     $inData = file_get_contents("php://input");
     $user->email = json_decode($inData)->{'email'};
 
@@ -15,7 +16,6 @@
     if ($data['responseCode'] == 0) {
         $_SESSION['userid'] = $data['id'];
         $_SESSION['login'] = 1;
-        setcookie("cookiezi", $_SESSION['login'], 0, "/Stentthrombose");
     }
     echo json_encode($data);
 ?>
