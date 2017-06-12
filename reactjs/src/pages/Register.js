@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom';
 import Header from './Header.js';
 import axios from 'axios';
 import './Register.css';
@@ -51,12 +52,15 @@ class Registers extends Component {
     e.preventDefault();
     if(this.checkPassword && this.state.password !== null && this.state.mail !== null){
       console.log(this.state);
-      axios.get('http://localhost:80/Stentthrombose/api/user/create.php', {
+      axios.get('http://localhost:8080/Stentthrombose/api/user/create.php', {
           email: this.state.mail,
           password: this.state.password
         })
         .then(function (response) {
           console.log(response);
+          if(response.ResponseCode === 0){
+            return <Redirect push to="/login" />;
+          }
         })
         .catch(function (error) {
           console.log(error);

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Login.css';
 import axios from 'axios';
 import Header from './Header.js';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 
 class Login extends Component {
   render() {
@@ -40,12 +40,15 @@ class Logins extends Component {
   signLeader(){
     if(this.state.mail !== null && this.state.password !== null && this.state.token == null){
       console.log(this.state);
-    axios.get('http://localhost:80/Stentthrombose/api/user/login.php', {
+    axios.get('http://localhost:8080/Stentthrombose/api/user/login.php', {
         email: this.state.mail,
         password: this.state.password
       })
       .then(function (response) {
         console.log(response);
+        if(response.ResponseCode == 0 ){
+          return <Redirect push to="/project" />;
+        }
       })
       .catch(function (error) {
         console.log(error);
@@ -58,7 +61,7 @@ class Logins extends Component {
   signTeam(){
     if(this.state.mail == null && this.state.password == null && this.state.token !== null && this.state.token !== ""){
       console.log(this.state);
-      axios.get('http://localhost:80/Stentthrombose/api/team/login.php', {
+      axios.get('http://localhost:8080/Stentthrombose/api/team/login.php', {
           token: this.state.token
         })
         .then(function (response) {
