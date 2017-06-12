@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Header from './Header.js';
 import axios from 'axios';
 import '../index.css';
-import './createProject.css';
+import './showProject.css';
 
 
-class App extends React.Component {
+class Project extends React.Component {
   render() {
       return (
          <div className="row">
@@ -13,17 +14,6 @@ class App extends React.Component {
          </div>
       );
    }
-}
-class Header extends Component {
-  render (){
-    return(
-      <div className="row">
-         <div className="col-12 header">
-            <h1>Stenttrombose</h1>
-         </div>
-      </div>
-    )
-  }
 }
 
 class Sidebar extends Component {
@@ -64,4 +54,4 @@ class Sidebar extends Component {
   }
 }
 
-export default App;
+export default Project;

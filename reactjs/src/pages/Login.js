@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Login.css';
 import axios from 'axios';
 import Header from './Header.js';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 
 class Login extends Component {
   render() {
@@ -47,6 +47,9 @@ class Logins extends Component {
       })
       .then(function (response) {
         console.log(response);
+        if(response.ResponseCode == 0 ){
+          return <Redirect push to="/project" />;
+        }
       })
       .catch(function (error) {
         console.log(error);
@@ -60,6 +63,7 @@ class Logins extends Component {
     if(this.state.mail == null && this.state.password == null && this.state.token !== null && this.state.token !== ""){
       console.log(this.state);
       axios.post('http://localhost:80/Stentthrombose/api/team/login.php', {
+
           token: this.state.token
         })
         .then(function (response) {
