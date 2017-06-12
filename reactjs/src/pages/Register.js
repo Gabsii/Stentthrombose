@@ -56,7 +56,7 @@ class Registers extends Component {
           password: this.state.password
         })
         .then(function (response) {
-          console.log(response);
+          console.log(response.responseMessage);
         })
         .catch(function (error) {
           console.log(error);
