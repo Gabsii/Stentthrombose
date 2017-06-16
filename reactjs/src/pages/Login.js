@@ -81,7 +81,6 @@ class Logins extends Component {
 
   render() {
     return (
-
       <div>
         <div className="row">
           <div className="col-3"></div>

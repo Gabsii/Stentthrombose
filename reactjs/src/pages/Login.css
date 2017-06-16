@@ -29,12 +29,12 @@
   border: 2px solid black;
 }
 
-.inputField {
-  width: 200px;
+.inputField{
+  width: 300px;
   height: 35px;
   font-family: inherit;
   font-size: 15px;
-  border: 1px solid #424242;
+  border: 1px solid #607D8B;
   padding: 5px;
 }
 
@@ -54,11 +54,13 @@
 .teamLogin {
   font-family: 'Raleway';
   font-size: 40px;
+  margin-top: 200px;
 }
 
 .leaderLogin {
   font-family: 'Raleway';
   font-size: 40px;
+  margin-top: 200px;
 }
 
 .links {
