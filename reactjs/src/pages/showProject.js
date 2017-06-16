@@ -6,19 +6,19 @@ import './showProject.css';
 
 class Project extends React.Component {
   render() {
-      return (
-         <div className="row">
-            <Header/>
-            <Sidebar/>
-         </div>
-      );
-   }
+    return (
+      <div className='row'>
+        <Header/>
+        <Sidebar/>
+      </div>
+    )
+  }
 }
 
 class Sidebar extends Component {
 
-  render (){
-    return(
+  render() {
+    return (
 
 
       <div className="body">
@@ -193,9 +193,38 @@ class Sidebar extends Component {
               </div>
               <div className="col-1"></div>
             </div>
-
     )
   }
 }
 
-export default Project;
+class ProjectTable extends Component {
+  render() {
+    return (
+      <div className='content col-9'>
+        <table className='projecttable' cellSpacing={0}>
+          <tr height='50px' className='tableheader'>
+            <th>Projekttitel</th>
+            <th colSpan={2}>Projektbezeichnung</th>
+          </tr>
+          <tr>
+            <th colSpan={3} className='subheading'>Fragen</th>
+          </tr>
+          <tr>
+            <td width='50%'>Bezeichnung</td>
+            <td width='25%'>Relevanz</td>
+            <td width='25%'>Antwort</td>
+          </tr>
+          <tr>
+            <th colSpan={3} className='subheading'>Teams</th>
+          </tr>
+          <tr>
+            <td colSpan={2}>Name</td>
+            <td>Kürzel</td>
+          </tr>
+        </table>
+      </div>
+    )
+  }
+}
+
+export default Project

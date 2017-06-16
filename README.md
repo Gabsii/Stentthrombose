@@ -1,2 +1,2 @@
 # Stentthrombose
-Ein akuter thrombotischer Verschluss einer Arterie
+Ein akuter thrombotischer Verschluss einer Arterie :shipit:
