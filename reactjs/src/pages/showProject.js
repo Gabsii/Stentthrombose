@@ -1,26 +1,15 @@
 import React, { Component } from 'react';
+import Header from './Header.js';
 import axios from 'axios';
-import '../index.css';
-import './createProject.css';
+import './showProject.css';
 
 
-class App extends React.Component {
+class Project extends React.Component {
   render() {
-      return (
-         <div className="row">
-            <Header/>
-            <Sidebar/>
-         </div>
-      );
-   }
-}
-class Header extends Component {
-  render (){
-    return(
-      <div className="row">
-         <div className="col-12 header">
-            <h1>Stenttrombose</h1>
-         </div>
+    return (
+      <div className='row'>
+        <Header/>
+        <Sidebar/>
       </div>
     )
   }
@@ -28,35 +17,214 @@ class Header extends Component {
 
 class Sidebar extends Component {
 
-  render (){
-    return(
+  render() {
+    return (
 
-          <div>
-            <div className="sidebar col-1">
-              <div className="sidebar-element">Projekt erstellen</div>
-              <div className="sidebar-element">Projekte</div>
-              <div className="logout">Logout</div>
+
+      <div className="body">
+              <div className="sidebar">
+                <div className="sidebarelement">Projekt erstellen</div>
+                <div className="sidebarelement">Projekte</div>
+                <div className="logout">Logout</div>
+              </div>
+              <div className="col-2"></div>
+              <div className="content col-9">
+                  <table className="projecttable" cellSpacing={0}>
+                    <tr height="50px" className="tableheader">
+                      <th width='50%'>Project Stentthrombose</th>
+                      <th width='50%'>ein akuter thrombotischer Verschluss einer Arterie </th>
+                    </tr>
+                    <tr>
+                      <th colSpan={2} className="subheading">Fragen (expandable)</th>
+                    </tr>
+                    <tr>
+                      <td width='75%'><b>Bezeichnung</b></td>
+                      <td width='25%'><b>Relevanz</b></td>
+                    </tr>
+                    <tr>
+                      <td>War das Video verständlich?</td>
+                      <td>7</td>
+                    </tr>
+                    <tr className="element">
+                      <td>Ist der Versuch korrekt durchgeführt?</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                    <th colSpan={2} className="subheading">Teams (expandable)</th>
+                    </tr>
+                    <tr>
+                      <td width='75%'><b>Team Name</b></td>
+                      <td width='25%'><b>Kürzel</b></td>
+                    </tr>
+                    <tr>
+                      <td>Team Mystic</td>
+                      <td>TIN</td>
+                    </tr>
+                    <tr>
+                      <td>Team Instinct</td>
+                      <td>TMY</td>
+                    </tr>
+                    <tr>
+                      <td>Team Valor</td>
+                      <td>TVA</td>
+                    </tr>
+                  </table>
+                  <table className="projecttable" cellSpacing={0}>
+                    <tr height="50px" className="tableheader">
+                      <th width='50%'>Project Stentthrombose</th>
+                      <th width='50%'>ein akuter thrombotischer Verschluss einer Arterie </th>
+                    </tr>
+                    <tr>
+                      <th colSpan={2} className="subheading">Fragen (expandable)</th>
+                    </tr>
+                    <tr>
+                      <td width='75%'><b>Bezeichnung</b></td>
+                      <td width='25%'><b>Relevanz</b></td>
+                    </tr>
+                    <tr>
+                      <td>War das Video verständlich?</td>
+                      <td>7</td>
+                    </tr>
+                    <tr className="element">
+                      <td>Ist der Versuch korrekt durchgeführt?</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                    <th colSpan={2} className="subheading">Teams (expandable)</th>
+                    </tr>
+                    <tr>
+                      <td width='75%'><b>Team Name</b></td>
+                      <td width='25%'><b>Kürzel</b></td>
+                    </tr>
+                    <tr>
+                      <td>Team Mystic</td>
+                      <td>TIN</td>
+                    </tr>
+                    <tr>
+                      <td>Team Instinct</td>
+                      <td>TMY</td>
+                    </tr>
+                    <tr>
+                      <td>Team Valor</td>
+                      <td>TVA</td>
+                    </tr>
+                  </table>
+                  <table className="projecttable" cellSpacing={0}>
+                    <tr height="50px" className="tableheader">
+                      <th width='50%'>Project Stentthrombose</th>
+                      <th width='50%'>ein akuter thrombotischer Verschluss einer Arterie </th>
+                    </tr>
+                    <tr>
+                      <th colSpan={2} className="subheading">Fragen (expandable)</th>
+                    </tr>
+                    <tr>
+                      <td width='75%'><b>Bezeichnung</b></td>
+                      <td width='25%'><b>Relevanz</b></td>
+                    </tr>
+                    <tr>
+                      <td>War das Video verständlich?</td>
+                      <td>7</td>
+                    </tr>
+                    <tr className="element">
+                      <td>Ist der Versuch korrekt durchgeführt?</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                    <th colSpan={2} className="subheading">Teams (expandable)</th>
+                    </tr>
+                    <tr>
+                      <td width='75%'><b>Team Name</b></td>
+                      <td width='25%'><b>Kürzel</b></td>
+                    </tr>
+                    <tr>
+                      <td>Team Mystic</td>
+                      <td>TIN</td>
+                    </tr>
+                    <tr>
+                      <td>Team Instinct</td>
+                      <td>TMY</td>
+                    </tr>
+                    <tr>
+                      <td>Team Valor</td>
+                      <td>TVA</td>
+                    </tr>
+                  </table>
+                  <table className="projecttable" cellSpacing={0}>
+                    <tr height="50px" className="tableheader">
+                      <th width='50%'>Project Stentthrombose</th>
+                      <th width='50%'>ein akuter thrombotischer Verschluss einer Arterie </th>
+                    </tr>
+                    <tr>
+                      <th colSpan={2} className="subheading">Fragen (expandable)</th>
+                    </tr>
+                    <tr>
+                      <td width='75%'><b>Bezeichnung</b></td>
+                      <td width='25%'><b>Relevanz</b></td>
+                    </tr>
+                    <tr>
+                      <td>War das Video verständlich?</td>
+                      <td>7</td>
+                    </tr>
+                    <tr className="element">
+                      <td>Ist der Versuch korrekt durchgeführt?</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                    <th colSpan={2} className="subheading">Teams (expandable)</th>
+                    </tr>
+                    <tr>
+                      <td width='75%'><b>Team Name</b></td>
+                      <td width='25%'><b>Kürzel</b></td>
+                    </tr>
+                    <tr>
+                      <td>Team Mystic</td>
+                      <td>TIN</td>
+                    </tr>
+                    <tr>
+                      <td>Team Instinct</td>
+                      <td>TMY</td>
+                    </tr>
+                    <tr>
+                      <td>Team Valor</td>
+                      <td>TVA</td>
+                    </tr>
+                  </table>
+
+              </div>
+              <div className="col-1"></div>
             </div>
-            <div className="col-2"></div>
-            <div className="content col-9">
-                <table className="projecttable">
-                  <tr height="50px" className="tableheader">
-                    <th>Projekttitel</th> <th>Projektbezeichnung</th>
-                  </tr>
-                  <tr><td colspan="2">Fragen</td></tr>
-                  <tr>
-                    <td width="50%">Bezeichnung</td>
-                    <td width="25%">Relevanz</td>
-                    <td width="25%">Antwort</td>
-                  </tr>
-                </table>
-            </div>
-            <div className="col-1"></div>
-          </div>
-
-
     )
   }
 }
 
-export default App;
+class ProjectTable extends Component {
+  render() {
+    return (
+      <div className='content col-9'>
+        <table className='projecttable' cellSpacing={0}>
+          <tr height='50px' className='tableheader'>
+            <th>Projekttitel</th>
+            <th colSpan={2}>Projektbezeichnung</th>
+          </tr>
+          <tr>
+            <th colSpan={3} className='subheading'>Fragen</th>
+          </tr>
+          <tr>
+            <td width='50%'>Bezeichnung</td>
+            <td width='25%'>Relevanz</td>
+            <td width='25%'>Antwort</td>
+          </tr>
+          <tr>
+            <th colSpan={3} className='subheading'>Teams</th>
+          </tr>
+          <tr>
+            <td colSpan={2}>Name</td>
+            <td>Kürzel</td>
+          </tr>
+        </table>
+      </div>
+    )
+  }
+}
+
+export default Project

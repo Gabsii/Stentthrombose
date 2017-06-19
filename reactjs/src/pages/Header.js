@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
 class Header extends Component {
-  render (){
-    return(
+  render() {
+    return (
       <div className="row 2">
-         <div className="col-12 header">
-            <h1><Link to='/' className="links">Stentthrombose</Link></h1>
-         </div>
+        <div className="col-12 header">
+          <h1>
+            <Link to='/' className="links">Stentthrombose</Link>
+          </h1>
+        </div>
       </div>
     )
   }

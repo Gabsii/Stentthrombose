@@ -1,79 +1,82 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Header from './Header.js';
 import axios from 'axios';
 import './Register.css';
 
 class Register extends Component {
   render() {
-      return (
-         <div className="row">
-          <Header/>
-          <Registers/>
-         </div>
-      );
-   }
+    return (
+      <div className="row">
+        <Header/>
+        <Registers/>
+      </div>
+    );
+  }
 }
 
 class Registers extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       mail: null,
       name: null,
       password: null,
       chpassword: null,
-      message: "Enter a Name..."
+      response: ""
     }
   }
 
-  setMail(e){
-    this.setState({ mail: e.target.value, message: "Please enter a password..." });
+  setMail(e) {
+    this.setState({mail: e.target.value});
   }
 
-  setName(e){
-    this.setState({ name: e.target.value, message: "Please enter a name..." });
+  setName(e) {
+    this.setState({name: e.target.value});
   }
 
-  setPassword(e){
-    this.setState({ password: e.target.value, message: "Please make sure the two passwords align..." });
+  setPassword(e) {
+    this.setState({password: e.target.value});
   }
 
-  setChPassword(e){
-    this.setState({ chpassword: e.target.value, message: "Press the Register button..."});
+  setChPassword(e) {
+    this.setState({chpassword: e.target.value});
   }
 
-  checkPassword(){
+  checkPassword() {
     var chpassword = this.state.chpassword;
     var password = this.state.password;
-    if(chpassword === password){
+    if (chpassword === password) {
       return true;
     } else {
       return false;
     }
   }
 
-  register(e){
+  register(e) {
     e.preventDefault();
-    if(this.checkPassword && this.state.password !== null && this.state.mail !== null){
+    if (this.checkPassword && this.state.password !== null && this.state.mail !== null) {
       console.log(this.state);
       axios.post('http://localhost:8080/Stentthrombose/api/user/create.php', {
-          name: this.state.name,
-          email: this.state.mail,
-          password: this.state.password
-        })
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }else{
+        name: this.state.name,
+        email: this.state.mail,
+        password: this.state.password
+      }).then(function(response) {
+        console.log(response);
+        if (response.data.responseCode === 0) {
+          console.log(true);
+          window.location.assign("/login");
+        }
+      }).catch(function(error) {
+        console.log(error);
+        this.setState({response: error});
+      });
+    } else {
       console.log("error");
     }
   }
 
-  render (){
-    return(
+  render() {
+    return (
       <div className="row">
         <div className="col-5"/>
         <div className="col-3 register">
@@ -85,12 +88,14 @@ class Registers extends Component {
             <input type="password" placeholder="Confirm password" className="inputField" onChange={this.setChPassword.bind(this)} required/><br/>
             <input type="submit" value="Register" className="btn" onClick={this.register.bind(this)}/>
           </form>
+          <div className="response">
+            {this.props.error}
+          </div>
         </div>
         <div className="col-4"/>
       </div>
     )
   }
 }
-
 
 export default Register;
